@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b131c">
+    <title>Nuestra frecuencia | Feliz Día del Padre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+    <div class="splash-screen" id="splashScreen">
+        <div class="signal-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="splash-content">
+            <p class="eyebrow">Una transmisión hecha solo para ti</p>
+            <h1 class="splash-title">Hay historias que comienzan<br>cuando dos señales coinciden</h1>
+            <div class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="splash-hint">Sube el volumen</p>
+            <button class="splash-button" id="splashBtn">Sintonizar nuestra historia</button>
+        </div>
+    </div>
+
+    <div class="hearts-bg" id="hearts" aria-hidden="true"></div>
+    <svg class="constellation-svg" id="constellationSvg" aria-hidden="true"></svg>
+
+    <main class="container">
+        <section class="hero section-reveal" id="inicio">
+            <p class="section-kicker">Frecuencia privada · Para ti</p>
+            <div class="photo-frame">
+                <div class="radio-marks" aria-hidden="true"></div>
+                <img class="main-photo" src="imagen.jpeg" alt="Fotografía especial de nuestra historia">
+                <span class="on-air-badge"><i></i> AL AIRE</span>
+            </div>
+            <h1 class="title">La señal que cambió mi vida</h1>
+            <p class="subtitle">Entre tantas voces, caminos y coincidencias, encontré en ti una presencia que se volvió hogar. Hoy celebro al hombre que eres, la forma en que cuidas y todo lo que construyes con amor.</p>
+            <div class="father-day-seal">
+                <span>Feliz</span><strong>Día del Padre</strong><small>Una señal de amor, admiración y gratitud</small>
+            </div>
+        </section>
+
+        <section class="father-section section-reveal" id="felicitacion">
+            <div class="section-heading">
+                <p class="section-kicker">Lo que admiro de ti</p>
+                <h2 class="section-title">La forma en que cuidas</h2>
+                <p class="section-intro">Ser padre también vive en los gestos cotidianos: en la paciencia, en la presencia y en esa manera tuya de hacer sentir seguros a quienes amas.</p>
+            </div>
+            <div class="virtue-grid">
+                <article class="virtue-card"><span class="virtue-number">01</span><div class="virtue-icon">⌂</div><h3>Tu presencia</h3><p>No solo estás: acompañas, escuchas y haces que los momentos sencillos se conviertan en recuerdos importantes.</p></article>
+                <article class="virtue-card"><span class="virtue-number">02</span><div class="virtue-icon">✦</div><h3>Tu manera de enseñar</h3><p>Con palabras, con paciencia y también con tu ejemplo, dejas aprendizajes que permanecen mucho después del momento.</p></article>
+                <article class="virtue-card"><span class="virtue-number">03</span><div class="virtue-icon">◎</div><h3>Tu forma de proteger</h3><p>En ti hay firmeza y ternura: una combinación que convierte tu cariño en refugio y tu compañía en confianza.</p></article>
+            </div>
+        </section>
+
+        <section class="origin-section section-reveal" id="origen">
+            <div class="section-heading"><p class="section-kicker">El inicio de todo</p><h2 class="section-title">Entre tantas señales, coincidimos</h2></div>
+            <div class="radio-console">
+                <div class="console-top"><span>FM</span><div class="frequency-display"><strong>AMOR</strong><small>SEÑAL ESTABLE</small></div><span>STEREO</span></div>
+                <div class="frequency-scale" aria-hidden="true">
+                    <div class="scale-line"></div>
+                    <span style="--pos: 5%">Ruido</span><span style="--pos: 35%">Señal</span><span style="--pos: 68%">Coincidencia</span><span style="--pos: 94%">Nosotros</span>
+                    <div class="frequency-needle"></div>
+                </div>
+                <div class="origin-copy">
+                    <p>No fue necesario buscar una gran explicación. En medio de voces, horarios y caminos distintos, algo empezó a sintonizarse entre nosotros.</p>
+                    <p>Primero fue una coincidencia. Después, una conversación que queríamos continuar. Y sin darnos cuenta, aquella señal terminó convirtiéndose en una historia propia.</p>
+                </div>
+                <div class="memory-stations">
+                    <button class="memory-chip secret-icon" data-secret="El instante en que algo dejó de sentirse casual">Primera señal</button>
+                    <button class="memory-chip secret-icon" data-secret="Las conversaciones que hicieron que quisiéramos seguir escuchándonos">Primera conexión</button>
+                    <button class="memory-chip secret-icon" data-secret="Cuando empezamos a construir un lenguaje que solo nosotros entendemos">Nuestra frecuencia</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="worlds-section section-reveal" id="mundos">
+            <div class="section-heading">
+                <p class="section-kicker">Dos maneras de comunicar</p>
+                <h2 class="section-title">Dos mundos que aprendieron a conectarse</h2>
+                <p class="section-intro">Parecían caminos distintos, pero ambos hablaban de lo mismo: tender puentes, acercar personas y hacer que un mensaje encuentre su destino.</p>
+            </div>
+            <div class="worlds-grid">
+                <article class="world-card network-card">
+                    <div class="world-visual network-visual" aria-hidden="true"><span class="network-emoji">📡</span></div>
+                    <p class="card-label">Ella</p><h3>En un mundo lleno de redes</h3><p class="world-subtitle">Conecta puntos y abre caminos</p>
+                    <p>Su mundo consiste en lograr que la distancia no impida la comunicación y que cada nodo encuentre la ruta correcta.</p>
+                </article>
+                <div class="connection-core" aria-hidden="true"><span></span><strong>MISMA<br>FRECUENCIA</strong></div>
+                <article class="world-card radio-card">
+                    <div class="world-visual microphone-visual" aria-hidden="true"><span class="microphone">🎙️</span><i></i><i></i><i></i></div>
+                    <p class="card-label">Él</p><h3>En un mundo lleno de voces</h3><p class="world-subtitle">Convierte su voz en compañía</p>
+                    <p>Su mundo usa palabras, historias y silencios para acompañar a personas que quizá nunca llegan a verse frente a frente.</p>
+                </article>
+            </div>
+            <blockquote class="connection-quote">“Ella aprendió a conectar equipos. Él aprendió a conectar personas. Y juntos crearon una conexión que pertenece solamente a los dos.”</blockquote>
+        </section>
+
+        <section class="intimacy-section section-reveal" id="intimidad">
+            <div class="intimacy-glow" aria-hidden="true"></div>
+            <div class="section-heading compact"><p class="section-kicker">Cuando el mundo baja el volumen</p><h2 class="section-title">Fuera del ruido</h2></div>
+            <p class="intimacy-lead">Entre señales públicas, voces y conexiones, construimos un espacio íntimo donde no hace falta transmitir nada para sentirnos escuchados.</p>
+            <div class="intimacy-grid">
+                <article><span>01</span><p>Las conversaciones que nadie más escucha.</p></article>
+                <article><span>02</span><p>Los silencios que también aprendimos a entender.</p></article>
+                <article><span>03</span><p>Las versiones de nosotros que solo existen cuando estamos juntos.</p></article>
+                <article><span>04</span><p>Ese lugar al que volvemos cuando afuera todo hace demasiado ruido.</p></article>
+            </div>
+        </section>
+
+        <section class="music-section section-reveal" id="musica">
+            <div class="section-heading">
+                <p class="section-kicker">Nuestra forma de escucharnos</p>
+                <h2 class="section-title">Instrumentos distintos, una misma canción</h2>
+                <p class="section-intro">No necesitamos tocar lo mismo para encontrar armonía. Cada instrumento aporta una parte distinta de lo que somos juntos.</p>
+            </div>
+            <div class="instrument-grid">
+                <article class="instrument-card" tabindex="0"><div class="instrument-symbol drum-symbol" aria-hidden="true"><span></span><i></i><b></b></div><p class="instrument-owner">Él</p><h3>Batería</h3><strong>El pulso</strong><p>La fuerza que sostiene el ritmo y recuerda que toda historia necesita un corazón constante.</p></article>
+                <article class="instrument-card piano-card" tabindex="0"><div class="instrument-symbol piano-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><p class="instrument-owner">Él</p><h3>Piano</h3><strong>La armonía</strong><p>La profundidad capaz de convertir emociones diferentes en una misma pieza.</p></article>
+                <article class="instrument-card" tabindex="0"><div class="instrument-symbol guitar-symbol" aria-hidden="true"><span></span><i></i></div><p class="instrument-owner">Ella</p><h3>Guitarra</h3><strong>La calidez</strong><p>La cercanía de una melodía que acompaña, abraza y vuelve memorables los instantes sencillos.</p></article>
+            </div>
+            <div class="shared-song">
+                <div class="large-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <p>Por separado somos sonido.</p><strong>Juntos encontramos la canción.</strong><small>Nunca tuvimos que tocar el mismo instrumento para aprender a escucharnos.</small>
+            </div>
+        </section>
+
+        <section class="soundtrack-section section-reveal" id="cancion">
+            <div class="section-heading compact"><p class="section-kicker">Una dedicatoria al aire</p><h2 class="section-title">La banda sonora de nosotros</h2></div>
+            <p class="soundtrack-copy">Algunas historias también se guardan en forma de música. Esta canción acompaña todo lo que fuimos, lo que somos y lo que todavía nos queda por construir.</p>
+            <div class="spotify-container"><iframe id="spotify-player" src="https://open.spotify.com/embed/track/671sG3ETDxC3L6qcGIrHRM?utm_source=generator&autoplay=1" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy" title="Nuestra canción en Spotify"></iframe></div>
+            <p class="play-hint">Dale play. Esta transmisión también tiene música.</p>
+        </section>
+
+        <section class="secret-frequency-section section-reveal" id="frecuencia-secreta">
+            <div class="secret-frequency-card" id="chapulinCard" role="button" tabindex="0" aria-label="Abrir frecuencia secreta">
+                <div class="antenna-symbol" aria-hidden="true"><i></i><i></i><span>CH</span></div>
+                <div><p class="section-kicker">Frecuencia inesperada</p><h2>Una señal que guarda algo muy especial</h2><p>Hay regalos que parecen pequeños hasta que conocemos la historia que llevan dentro.</p></div>
+                <span class="secret-frequency-action">Descubrir señal</span>
+            </div>
+        </section>
+
+        <section class="final-message section-reveal" id="cierre">
+            <p class="section-kicker">La transmisión continúa</p>
+            <h2 class="final-title">Nuestra señal sigue al aire</h2>
+            <p class="final-text">Tal vez comenzamos como dos señales entre muchas.<br>Hoy somos una frecuencia que solo nosotros sabemos reconocer.<br><br>Feliz Día del Padre al hombre que convierte su presencia en hogar, su voz en compañía y su amor en una historia que siempre quiero seguir escuchando.</p>
+            <span class="heart-big" id="heartExplosion" aria-label="Activar celebración">✦</span>
+            <div class="closing-line" aria-hidden="true"><span></span></div>
+            <p class="final-signature">Con amor, desde nuestra propia frecuencia.</p>
+        </section>
+
+        <footer class="footer"><span>SEÑAL PRIVADA</span><strong>Nuestra frecuencia</strong><span>SIEMPRE AL AIRE</span></footer>
+    </main>
+
+    <div class="letter-modal" id="letterModal" aria-hidden="true">
+        <div class="letter-container" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+            <button class="letter-close" type="button" onclick="closeLetter()" aria-label="Cerrar carta">✕</button>
+            <p class="letter-overline">FUERA DEL AIRE</p><h2 id="letterTitle">Lo que quería decirte</h2>
+            <div class="letter-content" id="letterContent"><p>Aquí irá tu carta. Edítala en el código.</p></div>
+        </div>
+    </div>
+
+    <div class="chapulin-modal" id="chapulinModal" aria-hidden="true">
+        <div class="chapulin-container" role="dialog" aria-modal="true" aria-labelledby="chapulinTitle">
+            <button class="chapulin-close" id="chapulinClose" type="button" aria-label="Cerrar frecuencia secreta">✕</button>
+            <div class="chapulin-emblem" aria-hidden="true"><i></i><i></i><span>CH</span></div>
+            <p class="letter-overline">FRECUENCIA SECRETA 70.8</p><h2 id="chapulinTitle">No contaban con esta señal</h2>
+            <p>El Chapulín Colorado no aparece aquí como un adorno: representa un regalo que para ti guarda un valor especial. Es uno de esos detalles que, por su historia, terminan diciendo mucho más de lo que parece a simple vista.</p>
+            <p class="chapulin-note">Aquí puedes colocar una fotografía del regalo o contar brevemente por qué ese recuerdo es tan importante.</p>
+            <span class="chapulin-motto">Un detalle inesperado. Un significado enorme.</span>
+        </div>
+    </div>
+
+    <button class="secret-letter-btn" id="secretLetterBtn" type="button" title="Abrir mensaje privado" aria-label="Abrir mensaje privado"><span>✉</span><small>Mensaje privado</small></button>
+    <audio id="bg-music" src="cancion.mp3" preload="auto"></audio>
+
+    <script>
+        const splashScreen = document.getElementById('splashScreen');
+        const splashBtn = document.getElementById('splashBtn');
+        const bgMusic = document.getElementById('bg-music');
+
+        splashBtn.addEventListener('click', () => {
+            splashScreen.classList.add('hidden');
+            bgMusic.play().catch(() => console.log('Autoplay bloqueado por el navegador'));
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.section-reveal').forEach((section) => revealObserver.observe(section));
+
+        window.addEventListener('scroll', () => {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollRatio = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+            if (bgMusic && !bgMusic.paused) bgMusic.volume = Math.max(0.35, 1 - scrollRatio * 0.35);
+        }, { passive: true });
+
+        const constellationSvg = document.getElementById('constellationSvg');
+        const secretIcons = document.querySelectorAll('.secret-icon');
+        const activatedPoints = [];
+
+        secretIcons.forEach((icon, index) => {
+            icon.addEventListener('click', (event) => {
+                event.preventDefault();
+                const rect = icon.getBoundingClientRect();
+                activateConstellationPoint(rect.left + rect.width / 2, rect.top + rect.height / 2, index, icon.dataset.secret);
+            });
+        });
+
+        function activateConstellationPoint(x, y, index, message) {
+            if (activatedPoints.some((point) => point.index === index)) return;
+            const currentPoint = { x, y, index };
+            const previousPoint = activatedPoints[activatedPoints.length - 1];
+            activatedPoints.push(currentPoint);
+
+            const point = document.createElement('div');
+            point.className = 'constellation-point active';
+            point.style.left = `${x - 5}px`;
+            point.style.top = `${y - 5}px`;
+            document.body.appendChild(point);
+            setTimeout(() => point.remove(), 3000);
+
+            if (previousPoint) {
+                constellationSvg.classList.add('active');
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', previousPoint.x); line.setAttribute('y1', previousPoint.y);
+                line.setAttribute('x2', x); line.setAttribute('y2', y); line.setAttribute('class', 'constellation-line');
+                constellationSvg.appendChild(line);
+                setTimeout(() => line.remove(), 3200);
+            }
+
+            const tag = document.createElement('div');
+            tag.className = 'memory-tag';
+            tag.textContent = message || 'Una parte de nuestra historia';
+            tag.style.left = `${Math.min(x + 18, window.innerWidth - 260)}px`;
+            tag.style.top = `${Math.max(y - 45, 12)}px`;
+            document.body.appendChild(tag);
+            setTimeout(() => tag.remove(), 2800);
+            if (navigator.vibrate) navigator.vibrate(40);
+        }
+
+        const letterBtn = document.getElementById('secretLetterBtn');
+        const letterModal = document.getElementById('letterModal');
+        const letterContent = document.getElementById('letterContent');
+        let typingTimer;
+
+        letterBtn.addEventListener('click', () => {
+            letterModal.classList.add('open');
+            letterModal.setAttribute('aria-hidden', 'false');
+            typeLetterContent();
+        });
+
+        function closeLetter() {
+            clearTimeout(typingTimer);
+            letterModal.classList.remove('open');
+            letterModal.setAttribute('aria-hidden', 'true');
+        }
+
+        letterModal.addEventListener('click', (event) => { if (event.target === letterModal) closeLetter(); });
+
+        function typeLetterContent() {
+            const text = `Mi vida,\n\nHoy no quiero felicitarte solo por una fecha. Quiero celebrar la manera en que estás presente, la forma en que cuidas y todo lo bueno que dejas en quienes tienen la fortuna de compartir la vida contigo.\n\nA veces pienso en cómo empezó nuestra historia: dos mundos que parecían distintos, una señal inesperada y una conversación que poco a poco se volvió un lugar al que siempre quería regresar.\n\nAdmiro tu voz, tu sensibilidad, tu fuerza y la forma en que conviertes lo cotidiano en algo especial. También admiro al padre que eres y el amor que pones en cada gesto, incluso en aquellos que quizá nadie más nota.\n\nGracias por ser ritmo, armonía, compañía y hogar. Feliz Día del Padre. Te amo.`;
+            clearTimeout(typingTimer);
+            letterContent.textContent = '';
+            let charIndex = 0;
+            function typeNextChar() {
+                if (charIndex < text.length) {
+                    letterContent.textContent += text[charIndex];
+                    charIndex += 1;
+                    typingTimer = setTimeout(typeNextChar, 20);
+                }
+            }
+            typeNextChar();
+        }
+
+        const chapulinCard = document.getElementById('chapulinCard');
+        const chapulinModal = document.getElementById('chapulinModal');
+        const chapulinClose = document.getElementById('chapulinClose');
+        function openChapulinModal() {
+            chapulinModal.classList.add('open');
+            chapulinModal.setAttribute('aria-hidden', 'false');
+            if (navigator.vibrate) navigator.vibrate([40, 25, 40]);
+        }
+        function closeChapulinModal() {
+            chapulinModal.classList.remove('open');
+            chapulinModal.setAttribute('aria-hidden', 'true');
+        }
+        chapulinCard.addEventListener('click', openChapulinModal);
+        chapulinCard.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openChapulinModal(); }
+        });
+        chapulinClose.addEventListener('click', closeChapulinModal);
+        chapulinModal.addEventListener('click', (event) => { if (event.target === chapulinModal) closeChapulinModal(); });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') { closeLetter(); closeChapulinModal(); }
+        });
+
+        const heartExplosion = document.getElementById('heartExplosion');
+        let explosionTriggered = false;
+        function triggerSignalExplosion() {
+            if (explosionTriggered) return;
+            explosionTriggered = true;
+            const rect = heartExplosion.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const symbols = ['✦', '✧', '•', '⋆'];
+            for (let i = 0; i < 26; i += 1) {
+                const particle = document.createElement('div');
+                particle.className = 'particle exploding';
+                particle.textContent = symbols[i % symbols.length];
+                const angle = (Math.PI * 2 * i) / 26;
+                const distance = 130 + Math.random() * 250;
+                particle.style.left = `${centerX}px`; particle.style.top = `${centerY}px`;
+                particle.style.setProperty('--tx', `${Math.cos(angle) * distance}px`);
+                particle.style.setProperty('--ty', `${Math.sin(angle) * distance}px`);
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 2600);
+            }
+            heartExplosion.classList.add('celebrated');
+            if (navigator.vibrate) navigator.vibrate([50, 30, 50]);
+        }
+        heartExplosion.addEventListener('click', triggerSignalExplosion);
+        const finalObserver = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) triggerSignalExplosion(); }, { threshold: 0.65 });
+        finalObserver.observe(document.getElementById('cierre'));
+
+        function createSignalParticles() {
+            const particleContainer = document.getElementById('hearts');
+            const symbols = ['✦', '·', '✧', '⋆'];
+            const amount = window.innerWidth <= 768 ? 12 : 24;
+            for (let i = 0; i < amount; i += 1) {
+                const particle = document.createElement('span');
+                particle.className = 'heart';
+                particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDuration = `${13 + Math.random() * 15}s`;
+                particle.style.animationDelay = `${Math.random() * 12}s`;
+                particle.style.fontSize = `${0.7 + Math.random() * 1.2}rem`;
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        function createSparkles() {
+            const amount = window.innerWidth <= 768 ? 10 : 22;
+            for (let i = 0; i < amount; i += 1) {
+                const sparkle = document.createElement('span');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.animationDelay = `${Math.random() * 2.5}s`;
+                document.body.appendChild(sparkle);
+            }
+        }
+        createSignalParticles();
+        createSparkles();
+    </script>
+</body>
+</html>
