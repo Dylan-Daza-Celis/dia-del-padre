@@ -98,18 +98,6 @@
             <blockquote class="connection-quote">“Ella aprendió a conectar equipos. Él aprendió a conectar personas. Y juntos crearon una conexión que pertenece solamente a los dos.”</blockquote>
         </section>
 
-        <section class="intimacy-section section-reveal" id="intimidad">
-            <div class="intimacy-glow" aria-hidden="true"></div>
-            <div class="section-heading compact"><p class="section-kicker">Cuando el mundo baja el volumen</p><h2 class="section-title">Fuera del ruido</h2></div>
-            <p class="intimacy-lead">Entre señales públicas, voces y conexiones, construimos un espacio íntimo donde no hace falta transmitir nada para sentirnos escuchados.</p>
-            <div class="intimacy-grid">
-                <article><span>01</span><p>Las conversaciones que nadie más escucha.</p></article>
-                <article><span>02</span><p>Los silencios que también aprendimos a entender.</p></article>
-                <article><span>03</span><p>Las versiones de nosotros que solo existen cuando estamos juntos.</p></article>
-                <article><span>04</span><p>Ese lugar al que volvemos cuando afuera todo hace demasiado ruido.</p></article>
-            </div>
-        </section>
-
         <section class="video-call-section section-reveal" id="videollamada">
             <div class="section-heading">
                 <p class="section-kicker">Nuestra rutina más cercana</p>
@@ -125,7 +113,7 @@
                     <article class="call-window call-her">
                         <div class="camera-frame">
                             <span class="signal-corner top-left"></span><span class="signal-corner top-right"></span><span class="signal-corner bottom-left"></span><span class="signal-corner bottom-right"></span>
-                            <div class="call-avatar network-avatar">⌁</div>
+                            <div class="call-avatar network-avatar">🦝</div>
                         </div>
                         <p class="call-name">Ella en línea</p>
                         <small>La voz que vuelve cercana cualquier distancia</small>
@@ -134,7 +122,7 @@
                         <div class="camera-frame wolf-frame">
                             <span class="signal-corner top-left"></span><span class="signal-corner top-right"></span><span class="signal-corner bottom-left"></span><span class="signal-corner bottom-right"></span>
                             <div class="moon" aria-hidden="true"></div>
-                            <div class="call-avatar wolf-avatar">♆</div>
+                            <div class="call-avatar wolf-avatar">🐺</div>
                         </div>
                         <p class="call-name">Lobo en línea</p>
                         <small>La presencia que cuida incluso desde la pantalla</small>
@@ -167,13 +155,6 @@
             </div>
         </section>
 
-        <section class="soundtrack-section section-reveal" id="cancion">
-            <div class="section-heading compact"><p class="section-kicker">Una dedicatoria al aire</p><h2 class="section-title">La banda sonora de nosotros</h2></div>
-            <p class="soundtrack-copy">Algunas historias también se guardan en forma de música. Esta canción acompaña todo lo que fuimos, lo que somos y lo que todavía nos queda por construir.</p>
-            <div class="spotify-container"><iframe id="spotify-player" src="https://open.spotify.com/embed/track/671sG3ETDxC3L6qcGIrHRM?utm_source=generator&autoplay=1" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy" title="Nuestra canción en Spotify"></iframe></div>
-            <p class="play-hint">Dale play. Esta transmisión también tiene música.</p>
-        </section>
-
         <section class="secret-frequency-section section-reveal" id="frecuencia-secreta">
             <div class="secret-frequency-card" id="chapulinCard" role="button" tabindex="0" aria-label="Abrir frecuencia secreta">
                 <div class="antenna-symbol" aria-hidden="true"><i></i><i></i><span>CH</span></div>
@@ -198,7 +179,7 @@
         <div class="letter-container" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
             <button class="letter-close" type="button" onclick="closeLetter()" aria-label="Cerrar carta">✕</button>
             <p class="letter-overline">FUERA DEL AIRE</p><h2 id="letterTitle">Lo que quería decirte</h2>
-            <div class="letter-content" id="letterContent"><p>Aquí irá tu carta. Edítala en el código.</p></div>
+            <div class="letter-content" id="letterContent"></div>
         </div>
     </div>
 
@@ -208,12 +189,13 @@
             <div class="chapulin-emblem" aria-hidden="true"><i></i><i></i><span>CH</span></div>
             <p class="letter-overline">FRECUENCIA SECRETA 70.8</p><h2 id="chapulinTitle">No contaban con esta señal</h2>
             <p>El Chapulín Colorado no aparece aquí como un adorno: representa un regalo que para ti guarda un valor especial. Es uno de esos detalles que, por su historia, terminan diciendo mucho más de lo que parece a simple vista.</p>
-            <p class="chapulin-note">Aquí puedes colocar una fotografía del regalo o contar brevemente por qué ese recuerdo es tan importante.</p>
+            <p class="chapulin-note"><img src="images/chapulin.png" alt="Fotografía especial de nuestra historia"></p>
             <span class="chapulin-motto">Un detalle inesperado. Un significado enorme.</span>
         </div>
     </div>
 
     <button class="secret-letter-btn" id="secretLetterBtn" type="button" title="Abrir mensaje privado" aria-label="Abrir mensaje privado"><span>✉</span><small>Mensaje privado</small></button>
+    <button class="music-control-btn" id="musicControlBtn" type="button" title="Pausar música" aria-label="Control de música"><span>♪</span><small>Frecuencia</small></button>
     <audio id="bg-music" src="cancion.mp3" preload="auto"></audio>
 
     <script>
@@ -285,6 +267,22 @@
             setTimeout(() => tag.remove(), 2800);
             if (navigator.vibrate) navigator.vibrate(40);
         }
+
+        const musicControlBtn = document.getElementById('musicControlBtn');
+        let isMusicPlaying = false;
+        musicControlBtn.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(() => console.log('Autoplay bloqueado'));
+                musicControlBtn.setAttribute('title', 'Pausar música');
+                musicControlBtn.classList.remove('paused');
+                isMusicPlaying = true;
+            } else {
+                bgMusic.pause();
+                musicControlBtn.setAttribute('title', 'Reanudar música');
+                musicControlBtn.classList.add('paused');
+                isMusicPlaying = false;
+            }
+        });
 
         const letterBtn = document.getElementById('secretLetterBtn');
         const letterModal = document.getElementById('letterModal');
