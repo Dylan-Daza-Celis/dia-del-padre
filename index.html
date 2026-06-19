@@ -2,13 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#0b131c">
+    <meta name="description" content="Una transmisión especial de amor y gratitud">
+    <meta name="color-scheme" content="dark">
     <title>Nuestra frecuencia | Feliz Día del Padre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
     <div class="splash-screen" id="splashScreen">
@@ -30,7 +32,7 @@
             <p class="section-kicker">Frecuencia privada · Para ti</p>
             <div class="photo-frame">
                 <div class="radio-marks" aria-hidden="true"></div>
-                <img class="main-photo" src="imagen.jpeg" alt="Fotografía especial de nuestra historia">
+                <img class="main-photo" src="imagen.jpeg" alt="Fotografía especial de nuestra historia" loading="lazy" decoding="async">
                 <span class="on-air-badge"><i></i> AL AIRE</span>
             </div>
             <h1 class="title">La señal que cambió mi vida</h1>
@@ -189,7 +191,7 @@
             <div class="chapulin-emblem" aria-hidden="true"><i></i><i></i><span>CH</span></div>
             <p class="letter-overline">FRECUENCIA SECRETA 70.8</p><h2 id="chapulinTitle">No contaban con esta señal</h2>
             <p>El Chapulín Colorado no aparece aquí como un adorno: representa un regalo que para ti guarda un valor especial. Es uno de esos detalles que, por su historia, terminan diciendo mucho más de lo que parece a simple vista.</p>
-            <p class="chapulin-note"><img src="images/chapulin.png" alt="Fotografía especial de nuestra historia"></p>
+            <p class="chapulin-note"><img src="images/chapulin.png" alt="Fotografía especial de nuestra historia" loading="lazy" decoding="async">.</p>
             <span class="chapulin-motto">Un detalle inesperado. Un significado enorme.</span>
         </div>
     </div>
@@ -199,6 +201,9 @@
     <audio id="bg-music" src="cancion.mp3" preload="auto"></audio>
 
     <script>
+        const isMobile = window.innerWidth <= 768;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
         const splashScreen = document.getElementById('splashScreen');
         const splashBtn = document.getElementById('splashBtn');
         const bgMusic = document.getElementById('bg-music');
@@ -349,17 +354,19 @@
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
             const symbols = ['✦', '✧', '•', '⋆'];
-            for (let i = 0; i < 26; i += 1) {
+            const isMobile = window.innerWidth <= 768;
+            const particleCount = isMobile ? 16 : 26;
+            for (let i = 0; i < particleCount; i += 1) {
                 const particle = document.createElement('div');
                 particle.className = 'particle exploding';
                 particle.textContent = symbols[i % symbols.length];
-                const angle = (Math.PI * 2 * i) / 26;
-                const distance = 130 + Math.random() * 250;
+                const angle = (Math.PI * 2 * i) / particleCount;
+                const distance = isMobile ? 80 + Math.random() * 150 : 130 + Math.random() * 250;
                 particle.style.left = `${centerX}px`; particle.style.top = `${centerY}px`;
                 particle.style.setProperty('--tx', `${Math.cos(angle) * distance}px`);
                 particle.style.setProperty('--ty', `${Math.sin(angle) * distance}px`);
                 document.body.appendChild(particle);
-                setTimeout(() => particle.remove(), 2600);
+                setTimeout(() => particle.remove(), isMobile ? 1800 : 2600);
             }
             heartExplosion.classList.add('celebrated');
             if (navigator.vibrate) navigator.vibrate([50, 30, 50]);
@@ -371,21 +378,24 @@
         function createSignalParticles() {
             const particleContainer = document.getElementById('hearts');
             const symbols = ['✦', '·', '✧', '⋆'];
-            const amount = window.innerWidth <= 768 ? 12 : 24;
+            const isMobile = window.innerWidth <= 768;
+            const amount = isMobile ? 6 : 12;
+            if (isMobile && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             for (let i = 0; i < amount; i += 1) {
                 const particle = document.createElement('span');
                 particle.className = 'heart';
                 particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
                 particle.style.left = `${Math.random() * 100}%`;
-                particle.style.animationDuration = `${13 + Math.random() * 15}s`;
-                particle.style.animationDelay = `${Math.random() * 12}s`;
-                particle.style.fontSize = `${0.7 + Math.random() * 1.2}rem`;
+                particle.style.animationDuration = `${isMobile ? 20 + Math.random() * 15 : 13 + Math.random() * 15}s`;
+                particle.style.animationDelay = `${Math.random() * (isMobile ? 6 : 12)}s`;
+                particle.style.fontSize = `${0.5 + Math.random() * (isMobile ? 0.8 : 1.2)}rem`;
                 particleContainer.appendChild(particle);
             }
         }
 
         function createSparkles() {
-            const amount = window.innerWidth <= 768 ? 10 : 22;
+            const isMobile = window.innerWidth <= 768;
+            const amount = isMobile ? 5 : 11;
             for (let i = 0; i < amount; i += 1) {
                 const sparkle = document.createElement('span');
                 sparkle.className = 'sparkle';

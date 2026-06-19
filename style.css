@@ -1410,6 +1410,12 @@ section {
     to { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
 }
 
+@media (max-width: 768px) {
+    .particle.exploding {
+        animation-duration: 1.5s;
+    }
+}
+
 .closing-line {
     position: relative;
     max-width: 650px;
@@ -1790,6 +1796,38 @@ section {
 
     .letter-container h2,
     .chapulin-container h2 { font-size: 1.75rem; }
+}
+
+@media (max-width: 480px) {
+    .splash-title { font-size: 1.65rem; }
+    .title { font-size: 2rem; }
+    .section-title { font-size: 1.45rem; }
+    .virtue-grid { gap: 12px; }
+    .virtue-card { padding: 18px; }
+    .virtue-number { font-size: 0.85rem; }
+    .virtue-icon { font-size: 2.2rem; }
+    .heart { will-change: auto; }
+    .sparkle { will-change: auto; }
+    .signal-orbit span { will-change: auto; }
+}
+
+@media (max-width: 768px) {
+    body::before { opacity: 0.1; }
+    .splash-screen::before { animation-duration: 50s !important; }
+    .splash-screen::after { animation-duration: 45s !important; }
+    .signal-orbit { animation-duration: 50s !important; }
+    .radio-border-decor { animation-duration: 55s !important; }
+    .mini-wave i { animation-duration: 1.6s !important; }
+    .large-wave i { animation-duration: 1.6s !important; }
+    .heart { will-change: auto; }
+    .sparkle { will-change: auto; }
+    .constellation-svg { display: none; }
+    @supports (backdrop-filter: blur(1px)) {
+        .letter-modal .letter-container,
+        .chapulin-modal .chapulin-container {
+            backdrop-filter: blur(8px);
+        }
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
