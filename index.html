@@ -32,7 +32,7 @@
             <p class="section-kicker">Frecuencia privada · Para ti</p>
             <div class="photo-frame">
                 <div class="radio-marks" aria-hidden="true"></div>
-                <img class="main-photo" src="imagen.jpeg" alt="Fotografía especial de nuestra historia" loading="lazy" decoding="async">
+                <img class="main-photo" src="images/imagen_principal.jpeg" alt="Fotografía especial de nuestra historia" loading="lazy" decoding="async">
                 <span class="on-air-badge"><i></i> AL AIRE</span>
             </div>
             <h1 class="title">La señal que cambió mi vida</h1>
@@ -60,7 +60,7 @@
         <section class="origin-section section-reveal" id="origen">
             <div class="section-heading"><p class="section-kicker">El inicio de todo</p><h2 class="section-title">Entre tantas señales, coincidimos</h2></div>
             <div class="radio-console">
-                <div class="console-top"><span>FM</span><div class="frequency-display"><strong>AMOR</strong><small>SEÑAL ESTABLE</small></div><span>STEREO</span></div>
+                <div class="console-top"><span>92.3 FM</span><div class="frequency-display"><strong>AMOR</strong><small>SEÑAL ESTABLE</small></div><span>STEREO</span></div>
                 <div class="frequency-scale" aria-hidden="true">
                     <div class="scale-line"></div>
                     <span style="--pos: 5%">Ruido</span><span style="--pos: 35%">Señal</span><span style="--pos: 68%">Coincidencia</span><span style="--pos: 94%">Nosotros</span>
@@ -117,7 +117,7 @@
                             <span class="signal-corner top-left"></span><span class="signal-corner top-right"></span><span class="signal-corner bottom-left"></span><span class="signal-corner bottom-right"></span>
                             <div class="call-avatar network-avatar">🦝</div>
                         </div>
-                        <p class="call-name">Ella en línea</p>
+                        <p class="call-name">Mapache en línea</p>
                         <small>La voz que vuelve cercana cualquier distancia</small>
                     </article>
                     <article class="call-window call-him">
@@ -190,13 +190,21 @@
             <button class="chapulin-close" id="chapulinClose" type="button" aria-label="Cerrar frecuencia secreta">✕</button>
             <div class="chapulin-emblem" aria-hidden="true"><i></i><i></i><span>CH</span></div>
             <p class="letter-overline">FRECUENCIA SECRETA 70.8</p><h2 id="chapulinTitle">No contaban con esta señal</h2>
-            <p>El Chapulín Colorado no aparece aquí como un adorno: representa un regalo que para ti guarda un valor especial. Es uno de esos detalles que, por su historia, terminan diciendo mucho más de lo que parece a simple vista.</p>
+            <p>En esta fecha quiero decirte:
+                
+            No siento las horas cuando estoy contigo
+            Me encanta porque todo lo ves positivo
+            Amo tus lunares y tus cicatrices
+
+            Dime en este tiempo donde te metiste
+            Que no te podia encontrar
+            </p>
             <p class="chapulin-note"><img src="images/chapulin.png" alt="Fotografía especial de nuestra historia" loading="lazy" decoding="async">.</p>
             <span class="chapulin-motto">Un detalle inesperado. Un significado enorme.</span>
         </div>
     </div>
 
-    <button class="secret-letter-btn" id="secretLetterBtn" type="button" title="Abrir mensaje privado" aria-label="Abrir mensaje privado"><span>✉</span><small>Mensaje privado</small></button>
+    <button class="secret-letter-btn" id="secretLetterBtn" type="button" title="Abrir mensaje privado" aria-label="Abrir mensaje privado"><span>✉️</span><small>Mensaje privado</small></button>
     <button class="music-control-btn" id="musicControlBtn" type="button" title="Pausar música" aria-label="Control de música"><span>♪</span><small>Frecuencia</small></button>
     <audio id="bg-music" src="cancion.mp3" preload="auto"></audio>
 
@@ -309,7 +317,7 @@
         letterModal.addEventListener('click', (event) => { if (event.target === letterModal) closeLetter(); });
 
         function typeLetterContent() {
-            const text = `Mi vida,\n\nHoy no quiero felicitarte solo por una fecha. Quiero celebrar la manera en que estás presente, la forma en que cuidas y todo lo bueno que dejas en quienes tienen la fortuna de compartir la vida contigo.\n\nA veces pienso en cómo empezó nuestra historia: dos mundos que parecían distintos, una señal inesperada y una conversación que poco a poco se volvió un lugar al que siempre quería regresar.\n\nAdmiro tu voz, tu sensibilidad, tu fuerza y la forma en que conviertes lo cotidiano en algo especial. También admiro al padre que eres y el amor que pones en cada gesto, incluso en aquellos que quizá nadie más nota.\n\nGracias por ser ritmo, armonía, compañía y hogar. Feliz Día del Padre. Te amo.`;
+            const text = `Mi amor,\n\nHoy no quiero felicitarte solo por una fecha. Quiero celebrar la manera en que estás presente, la forma en que cuidas y todo lo bueno que dejas en quienes tienen la fortuna de compartir la vida contigo.\n\nA veces pienso en cómo empezó nuestra historia: dos mundos que parecían distintos, una señal inesperada y una conversación que poco a poco se volvió un lugar al que siempre quería regresar.\n\nAdmiro tu voz, tu sensibilidad, tu fuerza y la forma en que conviertes lo cotidiano en algo especial. También admiro al padre que eres y el amor que pones en cada gesto, incluso en aquellos que quizá nadie más nota.\n\nGracias por ser ritmo, armonía, compañía y hogar. Feliz Día del Padre. Te amo.`;
             clearTimeout(typingTimer);
             letterContent.textContent = '';
             let charIndex = 0;
