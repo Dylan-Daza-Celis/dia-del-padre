@@ -1742,7 +1742,6 @@ section {
 
     .radio-console { padding: 25px 18px 30px; }
     .console-top { grid-template-columns: 1fr; gap: 8px; }
-    .console-top > span { display: none; }
 
     .origin-copy,
     .intimacy-grid,
